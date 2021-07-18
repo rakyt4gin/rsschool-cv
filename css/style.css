@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+}
+
+aside{
+  border: 1px solid red;
+}
+
+.aside-container{
+  margin: 0 auto;
+  padding: 70px;
+}
+
+header, .header__logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logoImg{
+  max-width: 300px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.header__title h1{
+  font-weight: 400;
+  font-size: 1.9rem;
+}
+
+.header__title h1 span{
+  font-weight: 800;
+}
+
+.header__text{
+  margin-top: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+}
