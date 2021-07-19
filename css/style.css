@@ -17,9 +17,13 @@ a{
 .container{
   margin: 0 auto;
   max-width: 1500px;
+  background: linear-gradient(90deg, rgba(241,69,228,1) 0%, rgba(61,243,244,1) 100%);
+}
+
+.content{
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(90deg, rgba(241,69,228,1) 0%, rgba(61,243,244,1) 100%);
+  border-bottom: 10px solid white;
 }
 .aside__container{
   padding: 70px;
@@ -157,23 +161,23 @@ a{
   justify-content: space-between;
 }
 
-.main__item:last-child .main__list li{
+.main__item:last-child .main__list div{
   align-items: center;
   display: flex;
   line-height: 4rem;
 }
 
-.main__item:last-child .main__list li p{
+.main__item:last-child .main__list div p{
   width: 40%;
   font-size: 2rem;
   margin-right: 40px;
 }
 
-.main__item:last-child .main__list li div{
+.main__item:last-child .main__list div li{
   display: flex;
 }
 
-.main__item:last-child .main__list li div div{
+.main__item:last-child .main__list div div div{
   background: black;
   width: 15px;
   height: 15px;
@@ -181,30 +185,43 @@ a{
   border-radius: 50%;
 }
 
-.main__item:last-child .main__list div:first-child li:first-child div div:last-child{
+.main__item:last-child .main__list li:first-child div:first-child div div:last-child{
   background: white;
 }
 
-.main__item:last-child .main__list div:first-child li:last-child div div:last-child{
+.main__item:last-child .main__list li:first-child div:last-child div div:last-child{
   background: white;
 }
 
-.main__item:last-child .main__list div:last-child li:first-child div div:last-child{
+.main__item:last-child .main__list li:last-child div:first-child div div:last-child{
   background: white;
 }
 
-.main__item:last-child .main__list div:last-child li:first-child div div:nth-child(4){
+.main__item:last-child .main__list li:last-child div:first-child div div:nth-child(4){
   background: white;
 }
 
-.main__item:last-child .main__list div:last-child li:last-child div div:last-child{
+.main__item:last-child .main__list li:last-child div:last-child div div:last-child{
   background: white;
 }
 
-.main__item:last-child .main__list div:last-child li:last-child div div:nth-child(4){
+.main__item:last-child .main__list li:last-child div:last-child div div:nth-child(4){
   background: white;
 }
 
-.main__item:last-child .main__list div:last-child li:last-child div div:nth-child(3){
+.main__item:last-child .main__list li:last-child div:last-child div div:nth-child(3){
   background: white;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 30px 0 ;
+}
+
+footer img{
+  width: 100px;
+  margin-right: 100px;
 }
