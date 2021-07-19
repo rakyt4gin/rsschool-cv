@@ -181,7 +181,7 @@ a{
   border-radius: 50%;
 }
 
-.main__item:last-child .main__list div:first-child li:first-child div div:last-child,{
+.main__item:last-child .main__list div:first-child li:first-child div div:last-child{
   background: white;
 }
 
