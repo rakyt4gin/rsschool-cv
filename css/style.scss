@@ -1,0 +1,351 @@
+@mixin ipad-pro{
+  @media (max-width:1100px) {@content;}
+}
+@mixin ipad{
+  @media (max-width:900px) {@content;}
+}
+@mixin iphone{
+  @media (max-width:550px) {@content;}
+}
+@mixin burger{
+  @media (max-width:740px) {@content;}
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1500px;
+  background: linear-gradient(90deg, #f145e4 0%, #3df3f4 100%);
+  @include ipad-pro{
+    padding: 0;
+  }
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 10px solid white;
+  @include ipad-pro{
+    flex-direction: column;
+  }
+
+  .aside {
+    .burger {
+      display: none;
+      position: relative;
+      z-index: 1;
+      @include ipad-pro{
+        display: block;
+        padding: 30px 0 0 40px;
+        position: fixed;
+      }
+      #menu__toggle {
+        opacity: 0;
+      }
+      #menu__toggle:checked ~ .menu__btn > span {
+        transform: rotate(45deg);
+      }
+      #menu__toggle:checked ~ .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0);
+      }
+      #menu__toggle:checked ~ .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+     
+      .hamburger-menu {
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: #616161;
+          transition-duration: .25s;
+        }
+        .menu__btn > span::before {
+          content: '';
+          top: -8px;
+        }
+        .menu__btn > span::after {
+          content: '';
+          top: 8px;
+        }
+        .menu__btn {
+          display: flex; /* используем flex для центрирования содержимого */
+          align-items: center;  /* центрируем содержимое кнопки */
+          position: relative;
+          top: -10px;
+          right: 0;
+          width: 26px;
+          height: 26px;
+          cursor: pointer;
+          z-index: 1;
+        }
+        .menu__box {
+          display: block;
+          position: fixed;
+          visibility: hidden;
+          top: 0;
+          left: -100%;
+          width: 300px;
+          height: 100%;
+          margin: 0;
+          padding: 80px 0;
+          list-style: none;
+          text-align: center;
+          background-color: #ECEFF1;
+          box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+          transition-duration: .25s;
+          .menu__item {
+            display: block;
+            padding: 12px 24px;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition-duration: .25s;
+            :hover{
+              background-color: #CFD8DC;
+            }
+          }
+        }
+      }
+    }
+    
+    .aside__container {
+      padding: 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .aside__header, header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        .header__logo {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: white;
+          img{
+            max-width: 300px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+          }
+        }
+        .header__title {
+          h1{
+            font-weight: 400;
+            font-size: 1.9rem;
+            span{
+              font-weight: 800;
+            }
+          }
+        }
+        .header__text {
+          margin-top: 15px;
+          font-size: 1.2rem;
+          text-align: center;
+        }
+      }
+      .aside__content {
+        margin-top: 100px;
+        @include ipad-pro{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-around;
+        }
+        .aside__item:last-child .item-aside__list ul {
+          display: flex;
+          justify-content: space-between;
+        }
+        .aside__item, .item-aside {
+          .item-aside__title {
+            min-width: 360px;
+            font-size: 1.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 15px 0;
+            background: radial-gradient(circle, #f6bbc5 17%, #a2fbd6 85%);
+            color: #e46464;
+          }
+          .item-aside__list {
+            li{
+              line-height: 4rem;
+              font-size: 1.5rem;
+              color: white;
+              i{
+                padding: 0 20px 0 10px;
+              }
+            }
+          }
+          .aside-language li:last-child div div:last-child, .aside-language li:last-child div div:nth-child(4) {
+            background: white;
+          }
+          .aside-language {
+            li{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding-right: 20px;
+              
+              div{
+                display: flex;
+                div{
+                  background: black;
+                  width: 15px;
+                  height: 15px;
+                  margin-left: 20px;
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .main {
+  
+    .main__container {
+      padding: 70px;
+      padding-top: 140px;
+      color: white;
+      .main__item:nth-child(2) .main__list li {
+        line-height: 4rem;
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid white;
+      }
+      .main__item:last-child .main__list ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .main__item:last-child .main__list div {
+        align-items: center;
+        display: flex;
+        line-height: 4rem;
+      }
+      .main__item:last-child .main__list div p {
+        width: 40%;
+        font-size: 2rem;
+        margin-right: 40px;
+      }
+      
+      .main__item:last-child .main__list div li {
+        display: flex;
+      }
+      
+      .main__item:last-child .main__list div div div {
+        background: black;
+        width: 15px;
+        height: 15px;
+        margin-left: 20px;
+        border-radius: 50%;
+      }
+      
+      .main__item:last-child .main__list li:first-child div:first-child div div:last-child {
+        background: white;
+      }
+      
+      .main__item:last-child .main__list li:first-child div:last-child div div:last-child {
+        background: white;
+      }
+      
+      .main__item:last-child .main__list li:last-child div:first-child div div:last-child {
+        background: white;
+      }
+      
+      .main__item:last-child .main__list li:last-child div:first-child div div:nth-child(4) {
+        background: white;
+      }
+      
+      .main__item:last-child .main__list li:last-child div:last-child div div:last-child {
+        background: white;
+      }
+      
+      .main__item:last-child .main__list li:last-child div:last-child div div:nth-child(4) {
+        background: white;
+      }
+      
+      .main__item:last-child .main__list li:last-child div:last-child div div:nth-child(3) {
+        background: white;
+      }
+      .main__item {
+        margin-bottom: 100px;
+        .main__title {
+          font-size: 1.7rem;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          padding-bottom: 20px;
+          i{
+            margin-right: 30px;
+          }
+          h2{
+            border-bottom: 5px solid white;
+            width: 100%;
+          }
+        }
+        .main__content {
+          font-size: 2rem;
+          text-align: justify;
+        }
+        .main__list {
+          ul{
+            @include ipad{
+              display: flex;
+              flex-wrap: wrap;
+            }
+            li{
+              @include ipad{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+              }
+              i{
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 30px 0;
+  img{
+    width: 100px;
+    margin-right: 100px;
+  }
+}
