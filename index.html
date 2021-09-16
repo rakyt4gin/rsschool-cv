@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <script src="https://kit.fontawesome.com/f01634794f.js" crossorigin="anonymous"></script>
+  <script src="./js/scipt.js" defer></script>
   <link rel="stylesheet" href="./css/style.css">
   <title>CV-Skrinnik</title>
 </head>
@@ -17,7 +18,21 @@
 <body>
   <div class="container">
     <div class="content">
-      <aside class="aside">
+      <aside class="aside" id="home">
+        <div class="burger" id="burger-menu">
+          <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span id="toggleBurgerIcon"></span>
+            </label>
+            <ul class="menu__box">
+              <li><a class="menu__item" href="#home">Home</a></li>
+              <li><a class="menu__item" href="#main">About Me</a></li>
+              <li><a class="menu__item" href="#education">Education</a></li>
+              <li><a class="menu__item" href="#skills">Skills</a></li>
+            </ul>
+          </div>
+        </div>
         <div class="aside__container">
           <div class="aside__header header">
             <figure class="header__logo">
@@ -32,7 +47,7 @@
           <div class="aside__content">
             <div class="aside__item item-aside">
               <div class="item-aside__title">
-                <h3>Contact</h3>
+                <h3>Contacts</h3>
               </div>
               <div class="item-aside__list">
                 <ul>
@@ -105,9 +120,9 @@
 
       </aside>
 
-      <main class="main">
+      <main class="main" >
         <div class="main__container">
-          <div class="main__item">
+          <div class="main__item" id="main">
             <div class="main__title">
               <i class="fas fa-user-alt"></i>
               <h2>ABOUT ME</h2>
@@ -119,7 +134,7 @@
               a
               lot of knowledge from this perfect course.</div>
           </div>
-          <div class="main__item">
+          <div class="main__item" id="education">
             <div class="main__title">
               <i class="fas fa-graduation-cap"></i>
               <h2>EDUCATION</h2>
@@ -135,7 +150,7 @@
               </ul>
             </div>
           </div>
-          <div class="main__item">
+          <div class="main__item" id="skills">
             <div class="main__title">
               <i class="fas fa-scroll"></i>
               <h2>SKILLS</h2>
