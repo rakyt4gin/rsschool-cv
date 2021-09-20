@@ -7,9 +7,6 @@
 @mixin iphone{
   @media (max-width:550px) {@content;}
 }
-@mixin burger{
-  @media (max-width:740px) {@content;}
-}
 
 html{
   scroll-behavior: smooth;
@@ -335,6 +332,14 @@ a {
                 margin-right: 20px;
               }
             }
+          }
+        }
+
+        &:nth-child(3){
+          code{
+            background: transparent;
+            color: white;
+            font-size: 1.2rem;
           }
         }
 
