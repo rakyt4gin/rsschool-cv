@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <script src="https://kit.fontawesome.com/f01634794f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
   <script src="./js/scipt.js" defer></script>
   <link rel="stylesheet" href="./css/style.css">
   <title>CV-Skrinnik</title>
@@ -120,7 +121,7 @@
 
       </aside>
 
-      <main class="main" >
+      <main class="main">
         <div class="main__container">
           <div class="main__item" id="main">
             <div class="main__title">
@@ -149,6 +150,13 @@
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="main__item" id="skills">
+            <div class="main__title">
+              <i class="fas fa-code"></i>
+              <h2>CODE EXAMPLE</h2>
+            </div>
+            <pre><code class="javascript">const compose = (...args) => x => args.reduceRight((sum, cur) => cur(sum), x)</code></pre>
           </div>
           <div class="main__item" id="skills">
             <div class="main__title">
@@ -204,7 +212,10 @@
               </ul>
             </div>
           </div>
+
         </div>
+
+
       </main>
     </div>
 
@@ -213,6 +224,11 @@
       <a href="https://github.com/rakyt4gin/rsschool-cv">GitHub</a>
     </footer>
   </div>
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+  <script src="/path/to/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </body>
 
 </html>
